@@ -13,6 +13,9 @@ interface iconClass {
 export class ParentComponent implements OnInit {
 
 	iconClass : string;
+	like : boolean;
+
+	click = this.iconClass;
 
 	constructor() { 
 
@@ -21,15 +24,9 @@ export class ParentComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	iconClicked() : void {
-		
-		this.iconClass = "active";	
-
-/*	if () {
-	this.iconClass = "active"
-	} else {
-			this.iconClass = "inactive";
-		};*/
-	};
+iconClicked2(event) {
+	event.target.classList.add('active'); // To ADD
+  event.target.classList.toggle('inactive'); // To toggle
+}
 
 }
